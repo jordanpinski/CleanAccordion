@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Clean Accordion</title>
+    <link href="css/theme.min.css" type="text/css" rel="stylesheet" />
+  </head>
+  <body>
+
+    <div class="container">
+
+      <div class="logo">
+        <object data="/svgs/pixel-coulee-logo.svg" type="text/html"></object>
+      </div>
+      <h1>Clean Accordion</h1>
+      <p class="text-center">A minimal, efficient, vanilla JavaScript accordion. Only 4KB total!</p>
+      <div class="buttons">
+        <a href="#" class="button button--primary" title="Download">Download</a>
+        <a href="#" class="button button--secondary" title="View Github">View Github</a>
+      </div>
+      <h2>Basic Initialization</h2>
+<pre>
+&lt;div data-accordion-group data-options='{"singleOpen":false}'&gt;
+
+  &lt;div data-accordion&gt;
+    &lt;div data-title&gt;&lt;/div&gt;
+    &lt;div data-content&gt;
+      &lt;div class="wrapper"&gt;
+      &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint assumenda ipsam, earum cumque accusamus amet consectetur nam alias, voluptatibus vitae eveniet rem beatae sed repudiandae asperiores! Inventore aliquam maiores a!&lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;div data-accordion&gt;
+    &lt;div data-title&gt;&lt;/div&gt;
+    &lt;div data-content&gt;
+      &lt;div class="wrapper"&gt;
+      &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint assumenda ipsam, earum cumque accusamus amet consectetur nam alias, voluptatibus vitae eveniet rem beatae sed repudiandae asperiores! Inventore aliquam maiores a!&lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+&lt;/div&gt;
+</pre>
+<pre>
+const elements = document.querySelectorAll('[data-accordion-group]');
+
+const cleanAccordion = new CleanAccordion(elements)
+</pre>
+<hr>
+      <h2>Options</h2>
+      <h3>Default Options</h3>
+<pre>
+{
+  singleOpen: true,
+  beforeOpen: function() {},
+  afterOpen: function() {},
+  beforeClose: function() {},
+  afterClose: function() {}
+}
+</pre>
+      <hr>
+      <h3>Passing Options</h3>
+      <p>Override the default options by passing in your own.</p>
+<pre>
+const elements = document.querySelectorAll('[data-accordion-group]');
+
+const cleanAccordion = new CleanAccordion(elements, {
+  singleOpen: true,
+})
+</pre>
+
+      <div class="clean-accordion" data-accordion-group>
+  
+        <div data-accordion>
+          <div data-title>Test Header</div>
+          <div data-content>
+            <div class="wrapper">
+              <p>Content here!</p>
+            </div> 
+          </div>
+        </div>
+
+        <div data-accordion>
+          <div data-title>Test Header</div>
+          <div data-content>
+            <div class="wrapper">
+              <h2>Lorem Ipsum Dolor</h2>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus quasi maxime, qui sed ex sunt, exercitationem obcaecati omnis vel sequi facere esse! Rem, sapiente fugiat esse itaque maiores deleniti aspernatur.</p>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto voluptates unde iste adipisci, atque rem et expedita placeat, officiis molestiae animi impedit veniam hic corporis laudantium earum quasi illum culpa!</p>
+            </div>
+          </div>
+        </div>
+  
+        <div data-accordion>
+          <div data-title>Test Header</div>
+          <div data-content>
+            <div class="wrapper">
+              <p>Content here!</p>
+            </div>
+          </div>
+        </div>
+  
+      </div>
+      <hr>
+      <h3>Data Options</h3>
+      If you prefer to pass options through HTML use the data-options attribute by passing a valid json object.
+<pre>
+&lt;div data-accordion-group data-options='{"singleOpen":false}'&gt;
+...
+&lt;/div&gt;
+</pre>
+  
+      <div class="clean-accordion" data-accordion-group data-options='{"singleOpen":false}'>
+  
+        <div data-accordion>
+          <div data-title>Test Header</div>
+          <div data-content>
+            <div class="wrapper">
+              <h2>Lorem Ipsum Dolor</h2>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus quasi maxime, qui sed ex sunt, exercitationem obcaecati omnis vel sequi facere esse! Rem, sapiente fugiat esse itaque maiores deleniti aspernatur.</p>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto voluptates unde iste adipisci, atque rem et expedita placeat, officiis molestiae animi impedit veniam hic corporis laudantium earum quasi illum culpa!</p>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto voluptates unde iste adipisci, atque rem et expedita placeat, officiis molestiae animi impedit veniam hic corporis laudantium earum quasi illum culpa!</p>
+            </div>
+          </div>
+        </div>
+  
+        <div data-accordion>
+          <div data-title>Test Header</div>
+          <div data-content>
+            <div class="wrapper">
+              <p>Content here!</p>
+              <p>Content here!</p>
+              <p>Content here!</p>
+              <p>Content here!</p>
+            </div>
+          </div>
+        </div>
+  
+        <div data-accordion>
+          <div data-title>Test Header</div>
+          <div data-content>
+            <div class="wrapper">
+              <p>Content here!</p>
+            </div>
+          </div>
+        </div>
+  
+      </div>
+
+    </div>
+
+    <div class="read-more" data-accordion-group>
+  
+      <div data-accordion>
+        <div data-content>
+          <div class="wrapper">
+            <p>Content here!</p>
+          </div> 
+        </div>
+        <div data-title data-less="Read Less" data-more="Read More">Read More</div>
+      </div>
+
+    </div>
+    <script src='js/scripts.min.js'></script>
+    <script>
+
+      // Basic Accordion
+      let elements = document.querySelectorAll('.clean-accordion');
+      const cleanAccordion = new CleanAccordion(elements);
+      window.pixelCoulee = {};
+      window.pixelCoulee.cleanAccordion = cleanAccordion;
+
+      // Read More
+      let readMoreElements = document.querySelectorAll('.read-more');
+      const readMore = new CleanAccordion(readMoreElements, {
+        afterOpen: function(accordion) {
+          let title = accordion.querySelector('[data-title]');
+          let titleText = 'Read Less';
+
+          if (title.hasAttribute('data-less')) {
+            titleText = title.dataset.less;
+          }
+
+          title.innerText = titleText;
+          title.title = titleText;
+        },
+        afterClose: function(accordion) {
+          let title = accordion.querySelector('[data-title]');
+          let titleText = 'Read More';
+
+          if (title.hasAttribute('data-more')) {
+            titleText = title.dataset.more;
+          }
+
+          title.innerText = titleText;
+          title.title = titleText;
+        }
+      });
+  </script>
+  </body>
+</html>
