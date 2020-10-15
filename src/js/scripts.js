@@ -5,8 +5,4 @@ document.addEventListener('DOMContentLoaded', function(event) {
     NodeList.prototype.forEach = Array.prototype.forEach;
   }
 
-  Object.prototype.Test = (options = {}) => { new Test(options) };
-  let test = document.querySelector('h3');
-
-  test.Test();
 });
