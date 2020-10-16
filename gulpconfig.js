@@ -1,7 +1,7 @@
 exports.names = {
   dest: {
     scss: 'styles.css',
-    js: 'scripts.js'
+    js: 'clean-accordion.js'
   }
 }
 

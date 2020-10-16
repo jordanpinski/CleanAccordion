@@ -1,1 +1,5 @@
+dist/css/*
+dist/js/*
+dist/fonts/*
+dist/svgs/*
 node_modules/*

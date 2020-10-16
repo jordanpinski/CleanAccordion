@@ -6,9 +6,7 @@ class CleanAccordion {
     this.cleanAccordionGroups = cleanAccordionGroups;
     if (this.cleanAccordionGroups.length <= 0) return;
 
-    this.handleResize = this.debounce(this.handleResize.bind(this), 100);
-
-    this.options = {
+    const defaultOptions = {
       _name: NAME,
       _version: VERSION.toFixed(1),
       singleOpen: true,                 // Should only one accordion be open at a time?
@@ -18,10 +16,8 @@ class CleanAccordion {
       afterClose: (accordion) => {}
     }
 
-    if (Object.keys(options).length > 0) {
-      Object.assign(this.options, options);
-    }
-
+    this.options = { ...defaultOptions, ...options }
+    this.handleResize = this.debounce(this.handleResize.bind(this), 100);
     this.init();
   }
 
@@ -180,11 +176,4 @@ class CleanAccordion {
       if (callNow) func.apply(context, args);
     };
   };
-}
-
-class Test {
-  constructor(options = {}) {
-    this.test = this;
-    console.log({options})
-  }
 }
