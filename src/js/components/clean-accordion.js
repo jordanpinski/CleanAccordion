@@ -1,5 +1,5 @@
 const NAME = "CleanAccordion";
-const VERSION = 1.0;
+const VERSION = "1.0.0";
 
 class CleanAccordion {
   constructor(cleanAccordionGroups = [], options = {}) {
@@ -8,7 +8,7 @@ class CleanAccordion {
 
     const defaultOptions = {
       _name: NAME,
-      _version: VERSION.toFixed(1),
+      _version: VERSION,
       singleOpen: true,                 // Should only one accordion be open at a time?
       beforeOpen: (accordion) => {},
       afterOpen: (accordion) => {},
