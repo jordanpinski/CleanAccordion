@@ -73,3 +73,12 @@ For every instance of *CleanAccordion* you can pass in some options to alter the
 | afterOpen | A function that's called after an accordion is opened | function(accordion) {} | function(accordion) {} |
 | beforeClose | A function that's called before an accordion is closed | function(accordion) {} | function(accordion) {} |
 | afterOpen | A function that's called after an accordion is closed | function(accordion) {} | function(accordion) {} |
+
+### Data Options
+Options can also be passed through HTML by adding a data-options attribute to the root element (data-accordion-group)
+
+```
+<div class="clean-accordion" data-accordion-group data-options='{"singleOpen":false}'>
+  ...
+</div>
+```
