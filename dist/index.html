@@ -9,7 +9,7 @@
     <div class="container">
 
       <div class="logo">
-        <object data="/svgs/pixel-coulee-logo.svg" type="text/html"></object>
+        <object data="https://siasky.net/AACg9vwTAmgXyTlTJu0Rh0tTd4m8Fa8PzkOoQffUt6QqmQ" type="text/html"></object>
       </div>
       <h1>Clean Accordion</h1>
       <p class="text-center">A minimal, efficient, vanilla JavaScript accordion. Only 4KB total!</p>
@@ -161,7 +161,7 @@ const cleanAccordion = new CleanAccordion(elements, {
       </div>
 
     </div>
-    <script src='js/scripts.min.js'></script>
+    <script src='js/clean-accordion.min.js'></script>
     <script>
 
       // Basic Accordion
@@ -170,32 +170,6 @@ const cleanAccordion = new CleanAccordion(elements, {
       window.pixelCoulee = {};
       window.pixelCoulee.cleanAccordion = cleanAccordion;
 
-      // Read More
-      let readMoreElements = document.querySelectorAll('.read-more');
-      const readMore = new CleanAccordion(readMoreElements, {
-        afterOpen: function(accordion) {
-          let title = accordion.querySelector('[data-title]');
-          let titleText = 'Read Less';
-
-          if (title.hasAttribute('data-less')) {
-            titleText = title.dataset.less;
-          }
-
-          title.innerText = titleText;
-          title.title = titleText;
-        },
-        afterClose: function(accordion) {
-          let title = accordion.querySelector('[data-title]');
-          let titleText = 'Read More';
-
-          if (title.hasAttribute('data-more')) {
-            titleText = title.dataset.more;
-          }
-
-          title.innerText = titleText;
-          title.title = titleText;
-        }
-      });
   </script>
   </body>
 </html>
