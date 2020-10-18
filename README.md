@@ -65,6 +65,11 @@ The `new CleanAccordion()` instruction you execute on your page can take two par
 
 ### Options
 For every instance of *CleanAccordion* you can pass in some options to alter the behavior.
+
 | Name | Meaning | Default Value | Example Value |
 | ---- | ------- | ------------- | ------------- |
 | singleOpen | Whether a single accordion can be open at a time | true | true |
+| beforeOpen | A function that's called before an accordion is open | function(accordion) {} | function(accordion) {} |
+| afterOpen | A function that's called after an accordion is open | function(accordion) {} | function(accordion) {} |
+| beforeClose | A function that's called before an accordion is closed | function(accordion) {} | function(accordion) {} |
+| afterOpen | A function that's called after an accordion is closed | function(accordion) {} | function(accordion) {} |
