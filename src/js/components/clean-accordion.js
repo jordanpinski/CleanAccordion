@@ -1,14 +1,14 @@
-const NAME = "CleanAccordion";
-const VERSION = "1.0.0";
-
+/**
+ * Entry point to the plugin.
+ */
 class CleanAccordion {
   constructor(cleanAccordionGroups = [], options = {}) {
     this.cleanAccordionGroups = cleanAccordionGroups;
     if (this.cleanAccordionGroups.length <= 0) return;
 
     const defaultOptions = {
-      _name: NAME,
-      _version: VERSION,
+      _name: "CleanAccordion",
+      _version: "1.0.0",
       singleOpen: true,                 // Should only one accordion be open at a time?
       beforeOpen: (accordion) => {},
       afterOpen: (accordion) => {},
