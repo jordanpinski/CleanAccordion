@@ -66,22 +66,45 @@ class CleanAccordion {
     }
   }
 
+  // TODO: Refactor this.
   calculateContentHeight(content) {
     if (!content.parentNode.classList.contains('open')) return;
     let height = 0;
 
     const children = Array.prototype.slice.call(content.children);
 
+    // 1. Loop through each child and get the computed height.
     children.forEach( (child) => {
-      height += child.scrollHeight;
 
-      // Add the top margin of first child
-      let firstChildStyle = child.children[0].currentStyle || window.getComputedStyle(child.children[0]);
-      let firstChildHeight = parseInt(firstChildStyle.marginTop.replace('px', ''));
-      height += firstChildHeight;
+      // 2. If the child has children calculate the height of all it's children.
+      if (child.children.length > 0) {
+        const childChildren = Array.prototype.slice.call(child.children);
+        let tempHeight = 0;
+
+        childChildren.forEach( (childNode) => {
+          tempHeight += this.getComputedHeight(childNode);
+        });
+
+        height += tempHeight;
+      } else {
+        height += this.getComputedHeight(child);
+      }
+
     });
       
     content.style.maxHeight = `${height}px`;
+  }
+  
+  /**
+   * Returns the computed height including margin of the passed element
+   * @param {object} element 
+   */
+  getComputedHeight(element) {
+    let height = element.scrollHeight
+    let computedStyle = window.getComputedStyle(element);
+    let marginTop = parseInt(computedStyle.marginTop.replace('px', ''));
+    let marginBottom = parseInt(computedStyle.marginBottom.replace('px', ''));
+    return height + marginTop + marginBottom;
   }
 
   resetContentHeight(content) {

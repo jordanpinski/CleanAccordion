@@ -2,7 +2,7 @@
 <html>
   <head>
     <title>Clean Accordion</title>
-    <link href="css/theme.min.css" type="text/css" rel="stylesheet" />
+    <link href="css/clean-accordion.min.css" type="text/css" rel="stylesheet" />
   </head>
   <body>
 
@@ -74,6 +74,7 @@ const cleanAccordion = new CleanAccordion(elements, {
         <div data-accordion>
           <div data-title>Test Header</div>
           <div data-content>
+            <h1>Testing</h1>
             <div class="wrapper">
               <p>Content here!</p>
             </div> 
@@ -115,33 +116,27 @@ const cleanAccordion = new CleanAccordion(elements, {
         <div data-accordion>
           <div data-title>Test Header</div>
           <div data-content>
-            <div class="wrapper">
-              <h2>Lorem Ipsum Dolor</h2>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus quasi maxime, qui sed ex sunt, exercitationem obcaecati omnis vel sequi facere esse! Rem, sapiente fugiat esse itaque maiores deleniti aspernatur.</p>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto voluptates unde iste adipisci, atque rem et expedita placeat, officiis molestiae animi impedit veniam hic corporis laudantium earum quasi illum culpa!</p>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto voluptates unde iste adipisci, atque rem et expedita placeat, officiis molestiae animi impedit veniam hic corporis laudantium earum quasi illum culpa!</p>
-            </div>
+            <h2>Lorem Ipsum Dolor</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus quasi maxime, qui sed ex sunt, exercitationem obcaecati omnis vel sequi facere esse! Rem, sapiente fugiat esse itaque maiores deleniti aspernatur.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto voluptates unde iste adipisci, atque rem et expedita placeat, officiis molestiae animi impedit veniam hic corporis laudantium earum quasi illum culpa!</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto voluptates unde iste adipisci, atque rem et expedita placeat, officiis molestiae animi impedit veniam hic corporis laudantium earum quasi illum culpa!</p>
           </div>
         </div>
   
         <div data-accordion>
           <div data-title>Test Header</div>
           <div data-content>
-            <div class="wrapper">
-              <p>Content here!</p>
-              <p>Content here!</p>
-              <p>Content here!</p>
-              <p>Content here!</p>
-            </div>
+            <p>Content here!</p>
+            <p>Content here!</p>
+            <p>Content here!</p>
+            <p>Content here!</p>
           </div>
         </div>
   
         <div data-accordion>
           <div data-title>Test Header</div>
           <div data-content>
-            <div class="wrapper">
-              <p>Content here!</p>
-            </div>
+            <p>Content here!</p>
           </div>
         </div>
   
@@ -153,9 +148,7 @@ const cleanAccordion = new CleanAccordion(elements, {
   
       <div data-accordion>
         <div data-content>
-          <div class="wrapper">
-            <p>Content here!</p>
-          </div> 
+          <p>Content here!</p>
         </div>
         <div data-title data-less="Read Less" data-more="Read More">Read More</div>
       </div>
@@ -163,13 +156,13 @@ const cleanAccordion = new CleanAccordion(elements, {
     </div>
     <script src='js/clean-accordion.min.js'></script>
     <script>
-
-      // Basic Accordion
-      let elements = document.querySelectorAll('.clean-accordion');
-      const cleanAccordion = new CleanAccordion(elements);
-      window.pixelCoulee = {};
-      window.pixelCoulee.cleanAccordion = cleanAccordion;
-
+      document.addEventListener('DOMContentLoaded', function() {
+        // Basic Accordion
+        let elements = document.querySelectorAll('.clean-accordion');
+        const cleanAccordion = new CleanAccordion(elements);
+        window.pixelCoulee = {};
+        window.pixelCoulee.cleanAccordion = cleanAccordion;
+      });
   </script>
   </body>
 </html>
