@@ -19,7 +19,7 @@ Add the required HTML & initialize.
 <div class="clean-accordion" data-accordion-group>
 
   <div data-accordion>
-    <div data-title>Heading 1</div>
+    <div data-control>Heading 1</div>
     <div data-content>
       <div class="wrapper">
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus quasi maxime, qui sed ex sunt, exercitationem obcaecati omnis vel sequi facere esse! Rem, sapiente fugiat esse itaque maiores deleniti aspernatur.</p>
@@ -28,7 +28,7 @@ Add the required HTML & initialize.
   </div>
 
   <div data-accordion>
-    <div data-title>Heading 2</div>
+    <div data-control>Heading 2</div>
     <div data-content>
       <div class="wrapper">
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus quasi maxime, qui sed ex sunt, exercitationem obcaecati omnis vel sequi facere esse! Rem, sapiente fugiat esse itaque maiores deleniti aspernatur.</p>
