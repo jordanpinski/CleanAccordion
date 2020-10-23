@@ -22,7 +22,7 @@
 &lt;div data-accordion-group data-options='{"singleOpen":false}'&gt;
 
   &lt;div data-accordion&gt;
-    &lt;div data-title&gt;&lt;/div&gt;
+    &lt;div data-control&gt;&lt;/div&gt;
     &lt;div data-content&gt;
       &lt;div class="wrapper"&gt;
       &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint assumenda ipsam, earum cumque accusamus amet consectetur nam alias, voluptatibus vitae eveniet rem beatae sed repudiandae asperiores! Inventore aliquam maiores a!&lt;/p&gt;
@@ -31,7 +31,7 @@
   &lt;/div&gt;
 
   &lt;div data-accordion&gt;
-    &lt;div data-title&gt;&lt;/div&gt;
+    &lt;div data-control&gt;&lt;/div&gt;
     &lt;div data-content&gt;
       &lt;div class="wrapper"&gt;
       &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint assumenda ipsam, earum cumque accusamus amet consectetur nam alias, voluptatibus vitae eveniet rem beatae sed repudiandae asperiores! Inventore aliquam maiores a!&lt;/p&gt;
@@ -72,7 +72,7 @@ const cleanAccordion = new CleanAccordion(elements, {
       <div class="clean-accordion" data-accordion-group>
   
         <div data-accordion>
-          <div data-title>Test Header</div>
+          <div data-control>Test Header</div>
           <div data-content>
             <h1>Testing</h1>
             <div class="wrapper">
@@ -82,7 +82,7 @@ const cleanAccordion = new CleanAccordion(elements, {
         </div>
 
         <div data-accordion>
-          <div data-title>Test Header</div>
+          <div data-control>Test Header</div>
           <div data-content>
             <div class="wrapper">
               <h2>Lorem Ipsum Dolor</h2>
@@ -93,7 +93,7 @@ const cleanAccordion = new CleanAccordion(elements, {
         </div>
   
         <div data-accordion>
-          <div data-title>Test Header</div>
+          <div data-control>Test Header</div>
           <div data-content>
             <div class="wrapper">
               <p>Content here!</p>
@@ -114,9 +114,13 @@ const cleanAccordion = new CleanAccordion(elements, {
       <div class="clean-accordion" data-accordion-group data-options='{"singleOpen":false}'>
   
         <div data-accordion>
-          <div data-title>Test Header</div>
+          <div data-control>List Inside</div>
           <div data-content>
             <h2>Lorem Ipsum Dolor</h2>
+            <ul>
+              <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae, vel? Minus obcaecati eius pariatur iste nobis, quae cumque similique facere eaque, libero ea, facilis maiores exercitationem suscipit amet asperiores id.</li>
+              <li>Testing</li>
+            </ul>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus quasi maxime, qui sed ex sunt, exercitationem obcaecati omnis vel sequi facere esse! Rem, sapiente fugiat esse itaque maiores deleniti aspernatur.</p>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto voluptates unde iste adipisci, atque rem et expedita placeat, officiis molestiae animi impedit veniam hic corporis laudantium earum quasi illum culpa!</p>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto voluptates unde iste adipisci, atque rem et expedita placeat, officiis molestiae animi impedit veniam hic corporis laudantium earum quasi illum culpa!</p>
@@ -124,7 +128,7 @@ const cleanAccordion = new CleanAccordion(elements, {
         </div>
   
         <div data-accordion>
-          <div data-title>Test Header</div>
+          <div data-control>Test Header</div>
           <div data-content>
             <p>Content here!</p>
             <p>Content here!</p>
@@ -134,7 +138,7 @@ const cleanAccordion = new CleanAccordion(elements, {
         </div>
   
         <div data-accordion>
-          <div data-title>Test Header</div>
+          <div data-control>Test Header</div>
           <div data-content>
             <p>Content here!</p>
           </div>
@@ -150,7 +154,7 @@ const cleanAccordion = new CleanAccordion(elements, {
         <div data-content>
           <p>Content here!</p>
         </div>
-        <div data-title data-less="Read Less" data-more="Read More">Read More</div>
+        <div data-control data-less="Read Less" data-more="Read More">Read More</div>
       </div>
 
     </div>

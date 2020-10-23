@@ -1,3 +1,5 @@
+// TODO: Add aria support
+
 /**
  * Entry point to the plugin.
  */
@@ -41,7 +43,7 @@ class CleanAccordion {
     let accordion = target.parentNode
 
     // 1. Check if the title was clicked
-    if (target.hasAttribute('data-title')) {
+    if (target.hasAttribute('data-control')) {
 
       // 2. Open/Close the accordion
       this.openClose(accordion);
@@ -66,33 +68,9 @@ class CleanAccordion {
     }
   }
 
-  // TODO: Refactor this.
   calculateContentHeight(content) {
     if (!content.parentNode.classList.contains('open')) return;
-    let height = 0;
-
-    const children = Array.prototype.slice.call(content.children);
-
-    // 1. Loop through each child and get the computed height.
-    children.forEach( (child) => {
-
-      // 2. If the child has children calculate the height of all it's children.
-      if (child.children.length > 0) {
-        const childChildren = Array.prototype.slice.call(child.children);
-        let tempHeight = 0;
-
-        childChildren.forEach( (childNode) => {
-          tempHeight += this.getComputedHeight(childNode);
-        });
-
-        height += tempHeight;
-      } else {
-        height += this.getComputedHeight(child);
-      }
-
-    });
-      
-    content.style.maxHeight = `${height}px`;
+    content.style.maxHeight = `${content.scrollHeight}px`;
   }
   
   /**
