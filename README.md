@@ -57,7 +57,7 @@ The `new CleanAccordion()` instruction you execute on your page can take two par
 | Parameter | What to pass | Required | Default value | Type |
 | --------- | ------------ | -------- | ------------- | ---- |
 | Element | The clean accordion DOM element/s | Yes | `null` | Dom Element |
-| Options | The option object for this instance of LazyLoad | No | `{}` | Plain Object |
+| Options | The option object for this instance of CleanAccordion | No | `{}` | Plain Object |
 
 ### Options
 For every instance of *CleanAccordion* you can pass in some options to alter the behavior.
