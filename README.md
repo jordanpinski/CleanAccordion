@@ -16,7 +16,7 @@ Include the CSS/JS in your HTML.
 ## Basic Usage
 Add the required HTML & initialize.
 ```
-<div class="clean-accordion" data-accordion-group>
+<div data-accordion-group>
 
   <div data-accordion>
     <div data-control>Heading 1</div>
@@ -37,7 +37,7 @@ Add the required HTML & initialize.
 ```
 <script>
 
-  const elements = document.querySelectorAll('.clean-accordion');
+  const elements = document.querySelectorAll('[data-accordion-group]');
 
   // Without options passed
   let cleanAccordion = new CleanAccordion(elements);
@@ -74,7 +74,7 @@ For every instance of *CleanAccordion* you can pass in some options to alter the
 Options can also be passed through HTML by adding a data-options attribute to the root element (data-accordion-group)
 
 ```
-<div class="clean-accordion" data-accordion-group data-options='{"singleOpen":false}'>
+<div data-accordion-group data-options='{"singleOpen":false}'>
   ...
 </div>
 ```
