@@ -1,4 +1,4 @@
-![Pixelcoulee Logo](https://siasky.net/CAAk1s1Tp9-H7uD2451VkcY-GioOLo_kudmSrvU-DH2aOQ)
+![Pixelcoulee Logo](https://siasky.net/AABLe6NEcRQSDcamGmncceJG0yMsFdtDMNQ0ghcqLyS5qQ)
 
 # CleanAccordion
 A minimal, efficient, vanilla JavaScript accordion. Only 4KB total!
