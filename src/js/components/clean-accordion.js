@@ -20,6 +20,7 @@ class CleanAccordion {
 
     this.options = { ...defaultOptions, ...options }
     this.handleResize = this.debounce(this.handleResize.bind(this), 100);
+    this.openClose = this.debounce(this.openClose.bind(this), 100);
     this.init();
   }
 
@@ -38,6 +39,7 @@ class CleanAccordion {
     window.addEventListener('resize', () => { this.handleResize() })
   }
 
+  // TODO: Event is being called more than once when a nested accordion
   handleAccordionClick(event) {
     let target = event.target;
     let accordion = target.parentNode
@@ -70,7 +72,17 @@ class CleanAccordion {
 
   calculateContentHeight(content) {
     if (!content.parentNode.classList.contains('open')) return;
+
+    // 1. Set content height
     content.style.maxHeight = `${content.scrollHeight}px`;
+
+    // 2. If this is a nested accordion group recalculate all parent [data-content]
+    let tempContent = content.parentNode.closest('[data-content]');
+    while (tempContent !== null) {
+      tempContent.style.maxHeight = `${tempContent.scrollHeight + content.scrollHeight}px`;
+      tempContent = tempContent.parentNode.closest('[data-content]');
+    }
+
   }
   
   /**

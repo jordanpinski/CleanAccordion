@@ -96,7 +96,72 @@ const cleanAccordion = new CleanAccordion(elements, {
           <div data-control>Test Header</div>
           <div data-content>
             <div class="wrapper">
-              <p>Content here!</p>
+              <h2>Nested</h2>
+
+              <div class="clean-accordion" data-accordion-group>
+  
+                <div data-accordion>
+                  <div data-control>Test Header</div>
+                  <div data-content>
+                    <h1>Testing</h1>
+                    <div class="wrapper">
+                      <p>Content here!</p>
+                    </div> 
+                  </div>
+                </div>
+        
+                <div data-accordion>
+                  <div data-control>Test Header</div>
+                  <div data-content>
+                    <div class="wrapper">
+                      <h2>Lorem Ipsum Dolor</h2>
+                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus quasi maxime, qui sed ex sunt, exercitationem obcaecati omnis vel sequi facere esse! Rem, sapiente fugiat esse itaque maiores deleniti aspernatur.</p>
+                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto voluptates unde iste adipisci, atque rem et expedita placeat, officiis molestiae animi impedit veniam hic corporis laudantium earum quasi illum culpa!</p>
+                    </div>
+                  </div>
+                </div>
+          
+                <div data-accordion>
+                  <div data-control>Test Header</div>
+                  <div data-content>
+                    <div class="clean-accordion" data-accordion-group>
+  
+                      <div data-accordion>
+                        <div data-control>Test Header</div>
+                        <div data-content>
+                          <h1>Testing</h1>
+                          <div class="wrapper">
+                            <p>Content here!</p>
+                          </div> 
+                        </div>
+                      </div>
+              
+                      <div data-accordion>
+                        <div data-control>Test Header</div>
+                        <div data-content>
+                          <div class="wrapper">
+                            <h2>Lorem Ipsum Dolor</h2>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus quasi maxime, qui sed ex sunt, exercitationem obcaecati omnis vel sequi facere esse! Rem, sapiente fugiat esse itaque maiores deleniti aspernatur.</p>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto voluptates unde iste adipisci, atque rem et expedita placeat, officiis molestiae animi impedit veniam hic corporis laudantium earum quasi illum culpa!</p>
+                          </div>
+                        </div>
+                      </div>
+                
+                      <div data-accordion>
+                        <div data-control>Test Header</div>
+                        <div data-content>
+                          <div class="wrapper">
+                            <p>Content here!</p>
+                          </div>
+                        </div>
+                      </div>
+                
+                    </div>
+                  </div>
+                </div>
+          
+              </div>
+
             </div>
           </div>
         </div>
@@ -164,8 +229,6 @@ const cleanAccordion = new CleanAccordion(elements, {
         // Basic Accordion
         let elements = document.querySelectorAll('.clean-accordion');
         const cleanAccordion = new CleanAccordion(elements);
-        window.pixelCoulee = {};
-        window.pixelCoulee.cleanAccordion = cleanAccordion;
       });
   </script>
   </body>
