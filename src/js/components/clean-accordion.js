@@ -19,8 +19,9 @@ class CleanAccordion {
     }
 
     this.options = { ...defaultOptions, ...options }
-    this.handleResize = this.debounce(this.handleResize.bind(this), 100);
-    this.openClose = this.debounce(this.openClose.bind(this), 100);
+    this.debounceTime = 100;
+    this.handleResize = this.debounce(this.handleResize.bind(this), this.debounceTime);
+    this.openClose = this.debounce(this.openClose.bind(this), this.debounceTime);
     this.init();
   }
 
@@ -63,11 +64,32 @@ class CleanAccordion {
   }
 
   openClose(accordion) {
+    let timeSinceLastOpenClose = this.debounceFallback(accordion);
+
+    if (timeSinceLastOpenClose < this.debounceTime) return;
+
     if (accordion.classList.contains('open')) {
       this.close(accordion);
     } else {
       this.open(accordion);
     }
+  }
+
+  /**
+   * 
+   */
+  debounceFallback(accordion) {
+    let timestamp = Date.now();
+    let existingTimeStamp = false;
+
+    if (accordion.hasAttribute('data-timestamp')) {
+      existingTimeStamp = accordion.dataset.timestamp;
+      accordion.dataset.timestamp = timestamp;
+    } else {
+      accordion.dataset.timestamp = timestamp;
+    }
+
+    return timestamp - existingTimeStamp;
   }
 
   calculateContentHeight(content) {

@@ -218,6 +218,40 @@ const cleanAccordion = new CleanAccordion(elements, {
       <div data-accordion>
         <div data-content>
           <p>Content here!</p>
+          <div class="clean-accordion" data-accordion-group data-options='{"singleOpen":false}'>
+  
+            <div data-accordion>
+              <div data-control>List Inside</div>
+              <div data-content>
+                <h2>Lorem Ipsum Dolor</h2>
+                <ul>
+                  <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae, vel? Minus obcaecati eius pariatur iste nobis, quae cumque similique facere eaque, libero ea, facilis maiores exercitationem suscipit amet asperiores id.</li>
+                  <li>Testing</li>
+                </ul>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus quasi maxime, qui sed ex sunt, exercitationem obcaecati omnis vel sequi facere esse! Rem, sapiente fugiat esse itaque maiores deleniti aspernatur.</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto voluptates unde iste adipisci, atque rem et expedita placeat, officiis molestiae animi impedit veniam hic corporis laudantium earum quasi illum culpa!</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto voluptates unde iste adipisci, atque rem et expedita placeat, officiis molestiae animi impedit veniam hic corporis laudantium earum quasi illum culpa!</p>
+              </div>
+            </div>
+      
+            <div data-accordion>
+              <div data-control>Test Header</div>
+              <div data-content>
+                <p>Content here!</p>
+                <p>Content here!</p>
+                <p>Content here!</p>
+                <p>Content here!</p>
+              </div>
+            </div>
+      
+            <div data-accordion>
+              <div data-control>Test Header</div>
+              <div data-content>
+                <p>Content here!</p>
+              </div>
+            </div>
+      
+          </div>
         </div>
         <div data-control data-less="Read Less" data-more="Read More">Read More</div>
       </div>
@@ -229,6 +263,34 @@ const cleanAccordion = new CleanAccordion(elements, {
         // Basic Accordion
         let elements = document.querySelectorAll('.clean-accordion');
         const cleanAccordion = new CleanAccordion(elements);
+
+        // Readmore
+        elements = document.querySelectorAll('.read-more');
+        const readMore = new CleanAccordion(elements, {
+          afterOpen: function(accordion) {
+            let control = accordion.querySelector('[data-control]:last-of-type');
+            let controlText = 'Read Less';
+
+            if (control.hasAttribute('data-less')) {
+              controlText = control.dataset.less;
+            }
+
+            control.innerText = controlText;
+            control.title = controlText;
+          },
+          afterClose: function(accordion) {
+            let control = accordion.querySelector('[data-control]:last-of-type');
+            if (!control) return;
+            let controlText = 'Read More';
+
+            if (control.hasAttribute('data-more')) {
+              controlText = control.dataset.more;
+            }
+
+            control.innerText = controlText;
+            control.title = controlText;
+          }
+        });
       });
   </script>
   </body>
