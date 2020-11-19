@@ -7,7 +7,7 @@ A minimal, efficient, vanilla JavaScript accordion. Only 4KB total!
 Include the CSS/JS in your HTML.
 
 ```
-<link href="css/theme.min.css" type="text/css" rel="stylesheet" />
+<link href="css/clean-accordion.min.css" type="text/css" rel="stylesheet" />
 ```
 ```
 <script src='js/clean-accordion.min.js'></script>
